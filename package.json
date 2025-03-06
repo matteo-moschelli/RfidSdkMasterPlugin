@@ -1,0 +1,17 @@
+{
+  "name": "it.anseltechnology.plugins.rfidsdkmaster",
+  "version": "0.0.1",
+  "description": "Plugin per integrare SDK RFID in applicazioni InstantDeveloper",
+  "cordova": {
+    "id": "it.anseltechnology.plugins.rfidsdkmaster",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Matteo Moschelli",
+  "license": "ISC"
+}
