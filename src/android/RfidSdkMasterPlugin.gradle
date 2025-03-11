@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+//
+
+android {
+  compileSdk 31
+  buildToolsVersion '30.0.2'
+
+  defaultConfig {
+    minSdkVersion 22
+    targetSdk 31
+    versionCode 10
+    versionName '0.10'
+    //multiDexEnabled true
+  }
+
+  /*
+  dexOptions {
+    javaMaxHeapSize "4g"
+  }
+  */
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+dependencies {
+  implementation 'androidx.appcompat:appcompat:1.4.1'
+  implementation 'com.android.support:multidex:1.0.0'
+  api(name:'rfidsdkmanager-debug', ext:'aar')
+}

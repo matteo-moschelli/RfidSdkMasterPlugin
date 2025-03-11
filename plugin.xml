@@ -1,16 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="it.anseltechnology.plugins.rfidsdkmaster" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="it.anseltechnology.plugins.rfidsdkmaster" version="0.0.1">
     <name>RfidSdkMasterPlugin</name>
     <js-module name="RfidSdkMasterPlugin" src="www/RfidSdkMasterPlugin.js">
-        <clobbers target="cordova.plugins.RfidSdkMasterPlugin" />
+        <clobbers target="cordova.plugins.RfidSdkMasterPlugin"/>
     </js-module>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="RfidSdkMasterPlugin">
-                <param name="android-package" value="it.anseltechnology.plugins.rfidsdkmaster.RfidSdkMasterPlugin" />
+                <param name="android-package" value="it.anseltechnology.plugins.rfidsdkmaster.RfidSdkMasterPlugin"/>
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-        <source-file src="src/android/RfidSdkMasterPlugin.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/RfidSdkMasterPlugin" />
+        <config-file parent="/*" target="AndroidManifest.xml"/>
+        <source-file src="src/android/RfidSdkMasterPlugin.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/RfidSdkMasterPlugin"/>
+        <source-file src="src/android/utils/Commands.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/Commands"/>
+        <source-file src="src/android/utils/DeviceTypes.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/DeviceTypes"/>
+        <framework src="src/android/RfidSdkMasterPlugin.gradle" custom="true" type="gradleReference"/>
+        <resource-file src="src/android/libs/rfidsdkmanager-debug.aar" target="libs/rfidsdkmanager-debug.aar"/>
     </platform>
 </plugin>
