@@ -12,7 +12,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        mavenCentral()
+        mavenCentral(url: "https://jitpack.io")
         flatDir {
           dirs 'libs'
         }
