@@ -15,6 +15,6 @@
         <source-file src="src/android/utils/Commands.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/Commands"/>
         <source-file src="src/android/utils/DeviceTypes.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/DeviceTypes"/>
         <framework src="src/android/RfidSdkMasterPlugin.gradle" custom="true" type="gradleReference"/>
-        <resource-file src="src/android/libs/rfidsdkmanager-debug.aar" target="libs/rfidsdkmanager-debug.aar"/>
+        <framework src="src/android/libs/rfidsdkmanager-debug.aar" custom="true" />
     </platform>
 </plugin>
