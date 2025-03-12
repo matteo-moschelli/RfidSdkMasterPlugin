@@ -99,7 +99,7 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
 
     private void startRfidRead() {
         try {
-            this.rfidInterface.startRfidInventory():
+            this.rfidInterface.startRfidInventory();
 
             myCallbackContext.success();
         } catch (Exception e) {
