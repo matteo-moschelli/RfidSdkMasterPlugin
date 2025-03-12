@@ -14,7 +14,32 @@
         <source-file src="src/android/RfidSdkMasterPlugin.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/RfidSdkMasterPlugin"/>
         <source-file src="src/android/utils/Commands.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/Commands"/>
         <source-file src="src/android/utils/DeviceTypes.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/DeviceTypes"/>
-        <framework src="src/android/RfidSdkMasterPlugin.gradle" custom="true" type="gradleReference"/>
+        <!-- Include the .aar dependency -->
         <framework src="src/android/libs/rfidsdkmanager-debug.aar" custom="true" />
+
+        <!-- Modify build.gradle to include the libs directory -->
+        <config-file target="app/build.gradle" parent="/*">
+            <block>
+                repositories {
+                    flatDir {
+                        dirs 'libs'
+                    }
+                }
+            </block>
+        </config-file>
+
+        <!-- Add the dependency in the dependencies block -->
+        <config-file target="app/build.gradle" parent="dependencies">
+            <block>
+                implementation(name: "rfidsdkmanager-debug", ext: "aar")
+            </block>
+        </config-file>
+
+        <!-- Force Gradle version update -->
+        <config-file target="gradle/wrapper/gradle-wrapper.properties" parent="/*">
+            <replace>
+                distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-all.zip
+            </replace>
+        </config-file>
     </platform>
 </plugin>
