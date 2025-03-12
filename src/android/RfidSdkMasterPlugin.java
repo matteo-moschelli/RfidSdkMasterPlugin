@@ -46,6 +46,50 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
             this.rfidInterface = new RfidMaster();
 
             this.rfidInterface.init(DeviceTypes.getEnum(args.getString(0)), context);
+
+            this.rfidInterface.setOnRfidFoundListener(new it.anseltechnology.rfidsdkmanager.core.interfaces.RfidDevice.OnRfidReadResultListener() {
+                @Override
+                public void onRfidFound(String rfid) {
+                    myCallbackContext.success(rfid);
+                }
+
+                /**
+                 * Alerts that no RFID tags where found during the last reading operation.
+                 */
+                @Override
+                public void onRfidNotFound() {
+                    myCallbackContext.error("Nessun RFID rilevato");
+                }
+
+                /**
+                 * Alerts that too many RFID tags were found during the last reading operation.
+                 *
+                 * @param tagsNumber the number of tags that was found during the last reading operation.
+                 */
+                @Override
+                public void onRfidTooManyFound(int tagsNumber) {
+                    myCallbackContext.error(String.format("Troppi tag in campo (letti %d tag.", tagsNumber));
+                }
+
+                /**
+                 * Alerts that the RFID reading process has started.
+                 */
+                @Override
+                public void onRfidReadStart() {
+                    myCallbackContext.success("RFID read start");
+                }
+
+                /**
+                 * Alerts that the RFID reading process has ended.
+                 */
+                @Override
+                public void onRfidReadStop() {
+                    myCallbackContext.success("RFID read stop");
+                }
+            });
+
+            myCallbackContext.success("Dispositivo connesso");
+
         } catch (Exception e) {
             e.printStackTrace();
             myCallbackContext.error(e.getMessage());
