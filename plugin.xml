@@ -1,10 +1,29 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="it.anseltechnology.plugins.rfidsdkmaster" version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+        xmlns:android="http://schemas.android.com/apk/res/android" 
+        id="it.anseltechnology.plugins.rfidsdkmaster" 
+        version="1.0.0">
     <name>RfidSdkMasterPlugin</name>
-    <js-module name="RfidSdkMasterPlugin" src="www/RfidSdkMasterPlugin.js">
-        <clobbers target="cordova.plugins.RfidSdkMasterPlugin"/>
-    </js-module>
+    <description>Plugin Cordova per includere la libreria RFID.</description>
+    <license>MIT</license>
+    <keywords>cordova, rfid, plugin</keywords>
+    <engines>
+        <engine name="cordova" version=">=10.0.0"/>
+        <engine name="cordova-android" version=">=10.0.0"/>
+    </engines>
+
+    <!-- Definizione della piattaforma Android -->
     <platform name="android">
+        <!-- Dichiarazione della classe Java -->
+        <js-module name="RfidSdkMasterPlugin" src="www/RfidSdkMasterPlugin.js">
+            <clobbers target="cordova.plugins.RfidSdkMasterPlugin"/>
+        </js-module>
+        
+        <config-file parent="/cordova/plugins" target="res/xml/config.xml">
+            <feature name="RfidSdkMasterPlugin">
+                <param name="android-package" value="it.anseltechnology.plugins.rfidsdkmaster.RfidSdkMasterPlugin"/>
+            </feature>
+        </config-file>
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <meta-data android:name="com.example.plugin" android:value="true"/>
         </config-file>
