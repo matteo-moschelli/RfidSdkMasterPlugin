@@ -10,7 +10,7 @@
                 <param name="android-package" value="it.anseltechnology.plugins.rfidsdkmaster.RfidSdkMasterPlugin"/>
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml"/>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml"/>
         <source-file src="src/android/RfidSdkMasterPlugin.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/RfidSdkMasterPlugin"/>
         <source-file src="src/android/utils/Commands.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/Commands"/>
         <source-file src="src/android/utils/DeviceTypes.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/DeviceTypes"/>
