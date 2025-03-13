@@ -32,7 +32,7 @@
             <activity android:exported="true" />
         </edit-config>
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest">
-            <uses-sdk android:minSdkVersion="$ANDROID-MINSDKVERSION"/>
+            <uses-sdk android:minSdkVersion="30"/>
         </edit-config>
 
         <!-- Include the .aar dependency -->
