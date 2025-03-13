@@ -11,10 +11,18 @@ dependencies {
 
 android {
   compileSdk 34
-  
+
   packagingOptions {
       exclude 'META-INF/NOTICE'
       exclude 'META-INF/LICENSE'
+  }
+
+  defaultConfig { 
+    minSdkVersion 22
+    targetSdk 31
+    versionCode 10
+    versionName '0.10'
+    //multiDexEnabled true
   }
 }
 
