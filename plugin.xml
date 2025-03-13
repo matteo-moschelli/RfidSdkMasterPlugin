@@ -23,7 +23,7 @@
             <feature name="RfidSdkMasterPlugin">
                 <param name="android-package" value="it.anseltechnology.plugins.rfidsdkmaster.RfidSdkMasterPlugin"/>
             </feature>
-            <preference name="android-minSdkVersion" value="30" />
+            <preference name="android-minSdkVersion" value="30" tools:overrideLibrary="it.anseltechnology.rfidsdkmanager"/>
         </config-file>
 
         <config-file parent="manifest/application" target="AndroidManifest.xml">
@@ -33,7 +33,7 @@
             <activity android:exported="true" />
         </edit-config>
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest">
-            <uses-sdk android:minSdkVersion="30" tools:overrideLibrary="it.anseltechnology.rfidsdkmanager"/>
+            <uses-sdk android:minSdkVersion="22" tools:overrideLibrary="it.anseltechnology.rfidsdkmanager"/>
         </edit-config>
 
         <!-- Include the .aar dependency -->
