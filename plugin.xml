@@ -20,7 +20,7 @@
         <framework src="src/android/libs/rfidsdkmanager-debug.aar" custom="true" />
 
         <!-- Modify build.gradle to include the libs directory -->
-        <config-file target="app/build.gradle" parent="buildscript">
+        <config-file target="app/build.gradle" parent="/project">
             <block>
                 repositories {
                     flatDir {
@@ -31,7 +31,7 @@
         </config-file>
 
         <!-- Add the dependency in the dependencies block -->
-        <config-file target="app/build.gradle" parent="dependencies">
+        <config-file target="app/build.gradle" parent="/project/dependencies">
             <block>
                 implementation(name: "rfidsdkmanager-debug", ext: "aar")
             </block>
