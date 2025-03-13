@@ -7,23 +7,19 @@
     <description>Plugin Cordova per includere la libreria RFID.</description>
     <license>MIT</license>
     <keywords>cordova, rfid, plugin</keywords>
-    <engines>
-        <engine name="cordova" version=">=10.0.0"/>
-        <engine name="cordova-android" version=">=10.0.0"/>
-    </engines>
+
+    <!-- Dichiarazione della classe Java -->
+    <js-module src="www/RfidSdkMasterPlugin.js" name="RfidSdkMasterPlugin">
+        <clobbers target="cordova.plugins.RfidSdkMasterPlugin"/>
+    </js-module>
 
     <!-- Definizione della piattaforma Android -->
     <platform name="android">
-        <!-- Dichiarazione della classe Java -->
-        <js-module name="RfidSdkMasterPlugin" src="www/RfidSdkMasterPlugin.js">
-            <clobbers target="cordova.plugins.RfidSdkMasterPlugin"/>
-        </js-module>
+        <source-file src="src/android/RfidSdkMasterPlugin.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster"/>
+        <source-file src="src/android/utils/Commands.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils"/>
+        <source-file src="src/android/utils/DeviceTypes.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils"/>
         
-        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity" xmlns:android="http://schemas.android.com/apk/res/android">
-            <activity android:exported="true" />
-        </edit-config>
-
-        <config-file parent="/cordova/plugins" target="res/xml/config.xml">
+        <config-file target="res/xml/config.xml" parent="/*">
             <feature name="RfidSdkMasterPlugin">
                 <param name="android-package" value="it.anseltechnology.plugins.rfidsdkmaster.RfidSdkMasterPlugin"/>
             </feature>
@@ -32,15 +28,22 @@
         <config-file parent="manifest/application" target="AndroidManifest.xml">
             <meta-data android:name="com.example.plugin" android:value="true"/>
         </config-file>
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity" xmlns:android="http://schemas.android.com/apk/res/android">
+            <activity android:exported="true" />
+        </edit-config>
 
-        <source-file src="src/android/RfidSdkMasterPlugin.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/RfidSdkMasterPlugin"/>
-        <source-file src="src/android/utils/Commands.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/Commands"/>
-        <source-file src="src/android/utils/DeviceTypes.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/DeviceTypes"/>
-        
         <!-- Include the .aar dependency -->
-        <framework src="src/android/libs/rfidsdkmanager-debug.aar" custom="true" />
+        <lib-file src="src/android/libs/rfidsdkmanager-debug.aar"/>
+
+        <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
+        <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
+
+        <framework src="src/android/RfidSdkMasterPlugin.gradle" custom="true" type="gradleReference"/>
+
+
 
         <!-- Modify build.gradle to include the libs directory -->
+        <!--
         <config-file target="app/build.gradle" parent="/*">
             <block>
                 repositories {
@@ -50,19 +53,16 @@
                 }
             </block>
         </config-file>
-
-        <!-- Add the dependency in the dependencies block -->
         <config-file target="app/build.gradle" parent="/project/dependencies">
             <block>
                 implementation(name: "rfidsdkmanager-debug", ext: "aar")
             </block>
         </config-file>
-
-        <!-- Force Gradle version update -->
         <config-file target="gradle/wrapper/gradle-wrapper.properties" parent="/*">
             <replace>
                 distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-all.zip
             </replace>
         </config-file>
+        -->
     </platform>
 </plugin>

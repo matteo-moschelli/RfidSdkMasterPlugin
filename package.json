@@ -1,6 +1,6 @@
 {
   "name": "it.anseltechnology.plugins.rfidsdkmaster",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Plugin per integrare SDK RFID in applicazioni InstantDeveloper",
   "cordova": {
     "id": "it.anseltechnology.plugins.rfidsdkmaster",

@@ -1,4 +1,22 @@
-buildscript {
+repositories{
+    jcenter()
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile(name:'rfidsdkmanager-debug', ext:'aar')
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+
+/*buildscript {
     repositories {
         google()
         jcenter()
@@ -32,12 +50,6 @@ android {
     //multiDexEnabled true
   }
 
-  /*
-  dexOptions {
-    javaMaxHeapSize "4g"
-  }
-  */
-
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
@@ -48,4 +60,4 @@ dependencies {
   implementation 'androidx.appcompat:appcompat:1.4.1'
   implementation 'com.android.support:multidex:1.0.0'
   implementation(name: 'rfidsdkmanager-debug', ext: 'aar')
-}
+}*/
