@@ -23,6 +23,7 @@
             <feature name="RfidSdkMasterPlugin">
                 <param name="android-package" value="it.anseltechnology.plugins.rfidsdkmaster.RfidSdkMasterPlugin"/>
             </feature>
+            <preference name="android-minSdkVersion" value="30" />
         </config-file>
 
         <config-file parent="manifest/application" target="AndroidManifest.xml">
@@ -40,7 +41,7 @@
 
         <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
         <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
-        <preference name="android-minSdkVersion" value="30" />
+        
 
         <framework src="src/android/RfidSdkMasterPlugin.gradle" custom="true" type="gradleReference"/>
 
