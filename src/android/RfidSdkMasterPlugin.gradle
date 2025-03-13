@@ -11,6 +11,7 @@ dependencies {
 
 android {
   compileSdk 34
+  buildToolsVersion '30.0.2'
 
   packagingOptions {
       exclude 'META-INF/NOTICE'
