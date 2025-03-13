@@ -32,7 +32,7 @@
             <activity android:exported="true" />
         </edit-config>
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest">
-            <uses-sdk android:minSdkVersion="$ANDROID-MINSDKVERSION"/>
+            <uses-sdk android:minSdkVersion="30" tools:overrideLibrary="it.anseltechnology.rfidsdkmanager"/>
         </edit-config>
 
         <!-- Include the .aar dependency -->
@@ -41,7 +41,6 @@
         <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
         <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
         <preference name="android-minSdkVersion" value="30" />
-        <preference name="ANDROID-MINSDKVERSION" default="30" />
 
         <framework src="src/android/RfidSdkMasterPlugin.gradle" custom="true" type="gradleReference"/>
 
