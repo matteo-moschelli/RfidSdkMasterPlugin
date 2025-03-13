@@ -31,9 +31,6 @@
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity" xmlns:android="http://schemas.android.com/apk/res/android">
             <activity android:exported="true" />
         </edit-config>
-        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest">
-            <uses-sdk android:minSdkVersion="30"/>
-        </edit-config>
 
         <!-- Include the .aar dependency -->
         <lib-file src="src/android/libs/rfidsdkmanager-debug.aar"/>
