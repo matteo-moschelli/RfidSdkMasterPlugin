@@ -22,17 +22,17 @@
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity" xmlns:android="http://schemas.android.com/apk/res/android">
             <activity android:exported="true" />
         </edit-config>
-        <config-file parent="/cordova/plugins" target="res/xml/config.xml">
-            <feature name="RfidSdkMasterPlugin">
-                <param name="android-package" value="it.anseltechnology.plugins.rfidsdkmaster.RfidSdkMasterPlugin"/>
-            </feature>
-        </config-file>
+
+        
+
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <meta-data android:name="com.example.plugin" android:value="true"/>
         </config-file>
+
         <source-file src="src/android/RfidSdkMasterPlugin.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/RfidSdkMasterPlugin"/>
         <source-file src="src/android/utils/Commands.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/Commands"/>
         <source-file src="src/android/utils/DeviceTypes.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils/DeviceTypes"/>
+        
         <!-- Include the .aar dependency -->
         <framework src="src/android/libs/rfidsdkmanager-debug.aar" custom="true" />
 
