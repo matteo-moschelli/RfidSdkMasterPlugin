@@ -19,6 +19,9 @@
             <clobbers target="cordova.plugins.RfidSdkMasterPlugin"/>
         </js-module>
         
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity" xmlns:android="http://schemas.android.com/apk/res/android">
+            <activity android:exported="true" />
+        </edit-config>
         <config-file parent="/cordova/plugins" target="res/xml/config.xml">
             <feature name="RfidSdkMasterPlugin">
                 <param name="android-package" value="it.anseltechnology.plugins.rfidsdkmaster.RfidSdkMasterPlugin"/>
