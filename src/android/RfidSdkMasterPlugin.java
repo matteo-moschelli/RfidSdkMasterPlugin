@@ -2,7 +2,7 @@ package it.anseltechnology.plugins.rfidsdkmaster;
 
 import org.apache.cordova.CordovaPlugin;
 
-import javax.naming.Context;
+import android.content.Context;
 
 import org.apache.cordova.CallbackContext;
 

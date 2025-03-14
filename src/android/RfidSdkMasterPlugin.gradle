@@ -7,6 +7,7 @@ repositories{
 
 dependencies {
   //implementation 'com.android.support:multidex:1.0.0'
+  implementation 'androidx.appcompat:appcompat:1.4.1'
   implementation(name:'rfidsdkmanager-debug', ext:'aar')
 }
 
