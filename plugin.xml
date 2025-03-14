@@ -16,9 +16,9 @@
     <!-- Definizione della piattaforma Android -->
     <platform name="android">
         <source-file src="src/android/RfidSdkMasterPlugin.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster"/>
-        <source-file src="src/android/utils/Commands.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils"/>
+        <!--<source-file src="src/android/utils/Commands.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils"/>
         <source-file src="src/android/utils/DeviceTypes.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils"/>
-        
+        -->
         <engines>
             <engine name="cordova" version=">=10.0.0"/>
             <engine name="cordova-android" version=">=10.0.0"/>
