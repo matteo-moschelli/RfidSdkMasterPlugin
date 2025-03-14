@@ -11,8 +11,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import it.anseltechnology.rfidsdkmanager.api.RfidMaster;
-import Commands;
-import DeviceTypes;
+import it.anseltechnology.rfidsdkmaster.utils.Commands;
+import it.anseltechnology.rfidsdkmaster.utils.DeviceTypes;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -111,7 +111,7 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
 
     private void stopRfidRead() {
         try {
-            this.rfidInterface.stopRfidInventory():
+            this.rfidInterface.stopRfidInventory();
 
             myCallbackContext.success();
         } catch (Exception e) {

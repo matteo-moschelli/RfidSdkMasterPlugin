@@ -1,3 +1,5 @@
+package it.anseltechnology.plugins.rfidsdkmaster.utils;
+
 import it.anseltechnology.rfidsdkmanager.core.RfidDeviceModel;
 
 public class DeviceTypes {
