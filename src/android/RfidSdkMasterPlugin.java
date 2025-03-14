@@ -3,6 +3,7 @@ package it.anseltechnology.plugins.rfidsdkmaster;
 import org.apache.cordova.CordovaPlugin;
 
 import android.content.Context;
+import android.util.Log;
 
 import org.apache.cordova.CallbackContext;
 
