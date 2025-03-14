@@ -34,7 +34,7 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals(CINIT)) {
+        if (action.equals(INIT)) {
             this.init(args);
             return true;
         } else if (action.equals(START_RFID)) {
@@ -134,7 +134,7 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
 
 
     private RfidDeviceModel getEnum(String model) {
-        if (type.equals(POINT_MOBILE)) {
+        if (model.equals(POINT_MOBILE)) {
             return RfidDeviceModel.POINT_MOBILE;
         }
         else {
