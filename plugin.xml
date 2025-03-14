@@ -37,9 +37,6 @@
             <activity android:exported="true" />
         </edit-config>-->
 
-        <!-- Include the .aar dependency -->
-        <lib-file src="src/android/libs/rfidsdkmanager-debug.aar"/>
-
         <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
         <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
         
@@ -53,7 +50,30 @@
         <!-- 14/03/2025 -->
         <!--The mergeExtDexDebug FAILED error, along with D8: java.lang.NullPointerException, usually points to an issue with incompatible dependencies, a corrupted build cache, or a mismatch in API versions.-->
         
-        
+        <preference name="AndroidXEnabled" value="true" />
+        <preference name="GradlePluginKotlinEnabled" value="true" />
+
+
+        <!-- Include the .aar dependency -->
+        <!--<lib-file src="src/android/libs/rfidsdkmanager-debug.aar"/>-->
+        <framework src="src/android/libs/rfidsdkmanager-debug.aar" custom="true" />
+
+
+        <config-file target="app/build.gradle" parent="/project">
+            <block>
+                repositories {
+                    flatDir {
+                        dirs 'libs'
+                    }
+                }
+            </block>
+        </config-file>
+
+        <config-file target="app/build.gradle" parent="/project/dependencies">
+            <block>
+                implementation(name: "rfidsdkmanager-debug", ext: "aar")
+            </block>
+        </config-file>
         
         <!-- Enable MultiDex in build.gradle -->
         <!--<config-file target="app/build.gradle" parent="android/defaultConfig">
