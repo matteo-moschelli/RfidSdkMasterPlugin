@@ -53,6 +53,14 @@
         <preference name="AndroidXEnabled" value="true" />
         <preference name="GradlePluginKotlinEnabled" value="true" />
 
+        <config-file target="config.xml" parent="/*">
+            <preference name="AndroidXEnabled" value="true" />
+            <preference name="GradlePluginKotlinEnabled" value="true" />
+        </config-file>
+
+        <variable name="ANDROIDXENABLED" value="true" />
+        <variable name="GRADLEPLUGINKOTLINENABLED" value="true" />
+
 
         <!-- Include the .aar dependency -->
         <!--<lib-file src="src/android/libs/rfidsdkmanager-debug.aar"/>-->
