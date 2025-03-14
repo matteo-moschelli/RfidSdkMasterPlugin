@@ -56,18 +56,18 @@
         
         
         <!-- Enable MultiDex in build.gradle -->
-        <config-file target="app/build.gradle" parent="android/defaultConfig">
+        <!--<config-file target="app/build.gradle" parent="android/defaultConfig">
             <append>
                 multiDexEnabled true
             </append>
         </config-file>
-
+-->
         <!-- Add MultiDex dependency -->
-        <config-file target="app/build.gradle" parent="dependencies">
+   <!--     <config-file target="app/build.gradle" parent="dependencies">
             <append>
                 implementation 'androidx.multidex:multidex:2.0.1'
             </append>
         </config-file>
-
+-->
     </platform>
 </plugin>
