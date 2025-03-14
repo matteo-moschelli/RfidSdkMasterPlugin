@@ -50,8 +50,8 @@
         <!-- 14/03/2025 -->
         <!--The mergeExtDexDebug FAILED error, along with D8: java.lang.NullPointerException, usually points to an issue with incompatible dependencies, a corrupted build cache, or a mismatch in API versions.-->
         
-        <preference name="AndroidXEnabled" value="true" />
-        <preference name="GradlePluginKotlinEnabled" value="true" />
+        <preference name="AndroidXEnabled" default="true" />
+        <preference name="GradlePluginKotlinEnabled" default="true" />
 
 
         <!-- Include the .aar dependency -->
