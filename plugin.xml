@@ -45,30 +45,29 @@
         
 
         <framework src="src/android/RfidSdkMasterPlugin.gradle" custom="true" type="gradleReference"/>
-
-
-
-        <!-- Modify build.gradle to include the libs directory -->
         <!--
-        <config-file target="app/build.gradle" parent="/*">
-            <block>
-                repositories {
-                    flatDir {
-                        dirs 'libs'
-                    }
-                }
-            </block>
-        </config-file>
-        <config-file target="app/build.gradle" parent="/project/dependencies">
-            <block>
-                implementation(name: "rfidsdkmanager-debug", ext: "aar")
-            </block>
-        </config-file>
-        <config-file target="gradle/wrapper/gradle-wrapper.properties" parent="/*">
-            <replace>
-                distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-all.zip
-            </replace>
-        </config-file>
+            Fino a qui compila, nuovo errore: 
+            ERROR:/Users/admin/.gradle/caches/transforms-3/4dfe5a21322cd3359b0a3b9e37e1e8a3/transformed/jetified-rfidsdkmanager-debug-runtime.jar: D8: java.lang.NullPointerException
         -->
+
+        <!-- 14/03/2025 -->
+        <!--The mergeExtDexDebug FAILED error, along with D8: java.lang.NullPointerException, usually points to an issue with incompatible dependencies, a corrupted build cache, or a mismatch in API versions.-->
+        
+        
+        
+        <!-- Enable MultiDex in build.gradle -->
+        <config-file target="app/build.gradle" parent="android/defaultConfig">
+            <append>
+                multiDexEnabled true
+            </append>
+        </config-file>
+
+        <!-- Add MultiDex dependency -->
+        <config-file target="app/build.gradle" parent="dependencies">
+            <append>
+                implementation 'androidx.multidex:multidex:2.0.1'
+            </append>
+        </config-file>
+
     </platform>
 </plugin>
