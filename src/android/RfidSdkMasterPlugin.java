@@ -48,7 +48,7 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
     private void init(JSONArray args) {
         try {
 
-            myCallbackContext.success("Hello, " + args[0]);
+            myCallbackContext.success("Hello, " + args.getString(0));
 
         } catch (Exception e) {
             e.printStackTrace();
