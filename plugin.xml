@@ -23,6 +23,8 @@
             </feature>
         </config-file>
 
+        <lib-file src="src/android/libs/rfidsdkmanager-debug.aar"/>
+
         
     </platform>
 </plugin>
