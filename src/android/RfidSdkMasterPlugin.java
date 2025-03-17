@@ -10,6 +10,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import it.anseltechnology.rfidsdkmanager.api.RfidMaster;
+
 /**
  * This class echoes a string called from JavaScript.
  */
