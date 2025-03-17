@@ -25,9 +25,9 @@
         
         <framework src="src/android/RfidSdkMasterPlugin.gradle" custom="true" type="gradleReference"/>
 
-        <!--<framework src="src/android/libs/device.sdk.rfid.aar" target="libs/device.sdk.rfid.aar"/>
-        <framework src="src/android/libs/device.sdk.jar" target="libs/device.sdk.jar"/>
-        -->
+        <framework src="src/android/libs/device.sdk.rfid.aar" target="libs/device.sdk.rfid.aar" custom="true"/>
+        <framework src="src/android/libs/device.sdk.jar" target="libs/device.sdk.jar" custom="true"/>
+
         
 
         
