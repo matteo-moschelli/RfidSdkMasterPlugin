@@ -1,0 +1,76 @@
+repositories{
+    jcenter()
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+dependencies {
+  //implementation 'com.android.support:multidex:1.0.0'
+  implementation 'androidx.appcompat:appcompat:1.4.1'
+  implementation(name:'rfidsdkmanager-debug', ext:'aar')
+}
+
+android {
+  compileSdk 34
+  buildToolsVersion '30.0.2'
+
+  packagingOptions {
+      exclude 'META-INF/NOTICE'
+      exclude 'META-INF/LICENSE'
+  }
+
+  defaultConfig { 
+    minSdkVersion 30
+    targetSdk 31
+    versionCode 10
+    versionName '0.10'
+    //multiDexEnabled true
+  }
+}
+
+/*buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.2'  // or latest stable version
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral(url: "https://jitpack.io")
+        flatDir {
+          dirs 'libs'
+        }
+    }
+}
+//
+
+android {
+  compileSdk 34
+  buildToolsVersion '30.0.2'
+
+  defaultConfig { 
+    minSdkVersion 22
+    targetSdk 31
+    versionCode 10
+    versionName '0.10'
+    //multiDexEnabled true
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+dependencies {
+  implementation 'androidx.appcompat:appcompat:1.4.1'
+  implementation 'com.android.support:multidex:1.0.0'
+  implementation(name: 'rfidsdkmanager-debug', ext: 'aar')
+}*/
