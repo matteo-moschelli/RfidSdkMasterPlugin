@@ -2,7 +2,6 @@ package it.anseltechnology.plugins.rfidsdkmaster;
 
 import org.apache.cordova.CordovaPlugin;
 
-import android.content.Context;
 import android.util.Log;
 
 import org.apache.cordova.CallbackContext;
@@ -59,7 +58,7 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
 
     private void startRfidRead() {
         try {
-            this.rfidInterface.startRfidInventory();
+            //this.rfidInterface.startRfidInventory();
 
             myCallbackContext.success();
         } catch (Exception e) {
@@ -71,7 +70,7 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
 
     private void stopRfidRead() {
         try {
-            this.rfidInterface.stopRfidInventory();
+            //this.rfidInterface.stopRfidInventory();
 
             myCallbackContext.success();
         } catch (Exception e) {
