@@ -26,12 +26,13 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
     private static final String CAEN = "CAEN";
     private static final String ZEBRA = "ZEBRA";
 
+    private RfidMaster rfidInterface;
     CallbackContext myCallbackContext;
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         myCallbackContext = callbackContext;
-        
+
         if (action.equals(INIT)) {
             this.init(args);
             return true;
