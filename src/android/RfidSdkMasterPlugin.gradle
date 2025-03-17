@@ -10,7 +10,7 @@ repositories{
 
 dependencies {
   implementation(name:'device-sdk-rfid', ext:'aar')
-  //implementation(name:'device-sdk', ext:'jar')
+  implementation(name:'device-sdk', ext:'jar')
 }
 
 android {
