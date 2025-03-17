@@ -25,6 +25,22 @@
 
         <lib-file src="src/android/libs/rfidsdkmanager-debug.aar"/>
 
+        <config-file target="app/build.gradle" parent="/project">
+            <block>
+                repositories {
+                    flatDir {
+                        dirs 'libs'
+                    }
+                }
+            </block>
+        </config-file>
+
+        <config-file target="app/build.gradle" parent="/project/dependencies">
+            <block>
+                implementation(name: "rfidsdkmanager-debug", ext: "aar")
+            </block>
+        </config-file>
+
         
     </platform>
 </plugin>
