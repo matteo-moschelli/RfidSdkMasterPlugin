@@ -16,13 +16,6 @@
     <!-- Definizione della piattaforma Android -->
     <platform name="android">
         <source-file src="src/android/RfidSdkMasterPlugin.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster"/>
-        <!--<source-file src="src/android/utils/Commands.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils"/>
-        <source-file src="src/android/utils/DeviceTypes.java" target-dir="src/it/anseltechnology/plugins/rfidsdkmaster/utils"/>
-        -->
-        <engines>
-            <engine name="cordova" version=">=10.0.0"/>
-            <engine name="cordova-android" version=">=10.0.0"/>
-        </engines>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="RfidSdkMasterPlugin">
@@ -30,72 +23,6 @@
             </feature>
         </config-file>
 
-        <!--<config-file parent="manifest/application" target="AndroidManifest.xml">
-            <meta-data android:name="com.example.plugin" android:value="true"/>
-        </config-file>
-        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity" xmlns:android="http://schemas.android.com/apk/res/android">
-            <activity android:exported="true" />
-        </edit-config>-->
-
-        <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
-        <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
         
-
-        <framework src="src/android/RfidSdkMasterPlugin.gradle" custom="true" type="gradleReference"/>
-        <!--
-            Fino a qui compila, nuovo errore: 
-            ERROR:/Users/admin/.gradle/caches/transforms-3/4dfe5a21322cd3359b0a3b9e37e1e8a3/transformed/jetified-rfidsdkmanager-debug-runtime.jar: D8: java.lang.NullPointerException
-        -->
-
-        <!-- 14/03/2025 -->
-        <!--The mergeExtDexDebug FAILED error, along with D8: java.lang.NullPointerException, usually points to an issue with incompatible dependencies, a corrupted build cache, or a mismatch in API versions.-->
-        <!--
-        <preference name="AndroidXEnabled" value="true" />
-        <preference name="GradlePluginKotlinEnabled" value="true" />
-        -->
-        <config-file target="config.xml" parent="/*">
-            <preference name="AndroidXEnabled" value="true" />
-            <preference name="GradlePluginKotlinEnabled" value="true" />
-        </config-file>
-
-        <!--<variable name="ANDROIDXENABLED" value="true" />
-        <variable name="GRADLEPLUGINKOTLINENABLED" value="true" />
-        -->
-
-        <!-- Include the .aar dependency -->
-        <!--<lib-file src="src/android/libs/rfidsdkmanager-debug.aar"/>-->
-        <framework src="src/android/libs/rfidsdkmanager-debug.aar" custom="true" />
-
-
-        <config-file target="app/build.gradle" parent="/project">
-            <block>
-                repositories {
-                    flatDir {
-                        dirs 'libs'
-                    }
-                }
-            </block>
-        </config-file>
-
-        <config-file target="app/build.gradle" parent="/project/dependencies">
-            <block>
-                implementation(name: "rfidsdkmanager-debug", ext: "aar")
-            </block>
-        </config-file>
-        
-        <!-- Enable MultiDex in build.gradle -->
-        <!--<config-file target="app/build.gradle" parent="android/defaultConfig">
-            <append>
-                multiDexEnabled true
-            </append>
-        </config-file>
--->
-        <!-- Add MultiDex dependency -->
-   <!--     <config-file target="app/build.gradle" parent="dependencies">
-            <append>
-                implementation 'androidx.multidex:multidex:2.0.1'
-            </append>
-        </config-file>
--->
     </platform>
 </plugin>
