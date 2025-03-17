@@ -30,6 +30,8 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        myCallbackContext = callbackContext;
+        
         if (action.equals(INIT)) {
             this.init(args);
             return true;
