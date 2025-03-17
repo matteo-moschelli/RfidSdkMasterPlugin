@@ -2,6 +2,7 @@ package it.anseltechnology.plugins.rfidsdkmaster;
 
 import org.apache.cordova.CordovaPlugin;
 
+import android.content.Context;
 import android.util.Log;
 
 import org.apache.cordova.CallbackContext;
@@ -51,8 +52,13 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
      */
     private void init(JSONArray args) {
         try {
+            
+            Context context = this.cordova.getActivity().getApplicationContext();
+            this.rfidInterface = new RfidMaster();
 
-            myCallbackContext.success("Hello, " + args.getString(0));
+            //this.rfidInterface.init(getEnum(args.getString(0)), context);
+
+            myCallbackContext.success("Hello, " + args.getString(0) + " quasi connesso!");
 
         } catch (Exception e) {
             e.printStackTrace();
