@@ -11,7 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import it.anseltechnology.rfidsdkmanager.api.RfidMaster;
+import device.sdk.rfid.RFIDController;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -27,7 +27,7 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
     private static final String CAEN = "CAEN";
     private static final String ZEBRA = "ZEBRA";
 
-    private RfidMaster rfidInterface;
+    private RFIDController rfidController;
     CallbackContext myCallbackContext;
 
     @Override
@@ -54,7 +54,7 @@ public class RfidSdkMasterPlugin extends CordovaPlugin {
         try {
             
             Context context = this.cordova.getActivity().getApplicationContext();
-            this.rfidInterface = new RfidMaster();
+            this.rfidController = RFIDController.getInstance();
 
             //this.rfidInterface.init(getEnum(args.getString(0)), context);
 

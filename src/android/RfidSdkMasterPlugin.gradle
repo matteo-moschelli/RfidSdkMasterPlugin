@@ -9,7 +9,8 @@ repositories{
 }
 
 dependencies {
-  implementation(name:'rfidsdkmanager-debug', ext:'aar')
+  implementation(name:'device.sdk.rfid', ext:'aar')
+  implementation(name:'device.sdk', ext:'jar')
 }
 
 android {
