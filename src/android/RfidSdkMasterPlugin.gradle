@@ -21,6 +21,16 @@ android {
       exclude 'META-INF/LICENSE'
   }
 
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.2'  // or latest stable version
+    }
+}
+
   /*defaultConfig { 
     minSdkVersion 30
     targetSdk 31
