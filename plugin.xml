@@ -32,6 +32,11 @@
             <preference name="distributionUrl" value="https\://services.gradle.org/distributions/gradle-7.5-all.zip" />
         </config-file>
 
+        <!-- Force Gradle to use version 7.5 or later -->
+        <preference name="GradleVersion" value="7.5.1" />
+    
+        <!-- Force Android Gradle Plugin Version -->
+        <preference name="GradlePluginVersion" value="7.2.2" />
         
     </platform>
 </plugin>
