@@ -11,21 +11,14 @@ repositories{
 dependencies {
   implementation(name:'device-sdk-rfid', ext:'aar')
   implementation(name:'device-sdk', ext:'jar')
-
-  classpath 'com.android.tools.build:gradle:7.5.0'
 }
 
 android {
   compileSdk 34
-  buildToolsVersion '30.0.2'
 
   packagingOptions {
       exclude 'META-INF/NOTICE'
       exclude 'META-INF/LICENSE'
-  }
-
-  defaultConfig {
-    multiDexEnabled true
   }
 
   /*defaultConfig { 
