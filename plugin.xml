@@ -28,7 +28,9 @@
         <framework src="src/android/libs/device-sdk-rfid.aar" target-dir="/libs/device-sdk-rfid.aar" custom="true"/>
         <lib-file src="src/android/libs/device-sdk.jar" custom="true"/>
 
-        
+        <config-file target="gradle/wrapper/gradle-wrapper.properties" parent="/*">
+            <preference name="distributionUrl" value="https\://services.gradle.org/distributions/gradle-7.5-all.zip" />
+        </config-file>
 
         
     </platform>
