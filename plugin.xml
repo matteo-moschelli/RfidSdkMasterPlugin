@@ -29,7 +29,7 @@
         <lib-file src="src/android/libs/device-sdk.jar" custom="true"/>
 
         <config-file target="gradle/wrapper/gradle-wrapper.properties" parent="/*">
-            <preference name="distributionUrl" value="https\://services.gradle.org/distributions/gradle-6.7.1.zip" />
+            <preference name="distributionUrl" value="https\://services.gradle.org/distributions/gradle-6.7.1-all.zip" />
         </config-file>
 
         <!-- Force Gradle to use version 7.5 or later -->
